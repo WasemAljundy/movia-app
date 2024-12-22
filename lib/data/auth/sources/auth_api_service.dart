@@ -6,14 +6,14 @@ import 'package:netflix_app/data/auth/models/signup_req_params.dart';
 import 'package:netflix_app/data/auth/models/signin_req_params.dart';
 import 'package:netflix_app/service_locator.dart';
 
-abstract class AuthApiService {
+abstract class AuthService {
 
   Future<Either> signUp(SignupReqParams params);
   Future<Either> signIn(SignInReqParams params);
 
 }
 
-class AuthApiServiceImpl extends AuthApiService {
+class AuthApiServiceImpl extends AuthService {
 
   @override
   Future<Either> signUp(SignupReqParams params) async {

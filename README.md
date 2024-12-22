@@ -1,16 +1,9 @@
-# netflix_app
+# Movia_app
 
 A new Flutter project.
 
-## Getting Started
+Watch new movies throw this app and keep you self entertained with the best movies. 😁
 
-This project is a starting point for a Flutter application.
+this project built by flutter using the best approach to make the best user experience.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Fully functional Clean Architecture with the latest tools and technologies in Flutter.
