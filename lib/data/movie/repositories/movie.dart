@@ -12,7 +12,7 @@ class MovieRepositoryImpl extends MovieRepository {
     return returnedData.fold(
       (error) => Left(error),
       (data) {
-        var movies = List.from(data['content'])
+        var movies = List.from(data['results'])
             .map(
               (item) => MovieMapper.toEntity(MovieModel.fromJson(item)),
             )

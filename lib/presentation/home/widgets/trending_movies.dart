@@ -26,6 +26,7 @@ class TrendingMovies extends StatelessWidget {
                         item.posterPath.toString(),
                   )
                   .toList(),
+              initalPageIndex: 0,
               isAssets: false,
               autoPlay: false,
               sliderHeight: 400,
