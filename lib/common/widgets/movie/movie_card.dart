@@ -3,6 +3,7 @@ import 'package:netflix_app/common/helpers/navigation/app_navigation.dart';
 import 'package:netflix_app/core/configs/assets/app_images.dart';
 import 'package:netflix_app/core/configs/theme/app_colors.dart';
 import 'package:netflix_app/domain/movie/entities/movie.dart';
+import 'package:netflix_app/presentation/watch/pages/movie_watch.dart';
 
 class MovieCard extends StatelessWidget {
   final MovieEntity movieEntity;
@@ -13,11 +14,12 @@ class MovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // AppNavigator.push(
-        //     context,
-        //     MovieWatchPage(
-        //       movieEntity: movieEntity,
-        //     ));
+        AppNavigator.push(
+          context,
+          MovieWatchPage(
+            movieEntity: movieEntity,
+          ),
+        );
       },
       child: Container(
         padding: const EdgeInsets.only(right: 10),

@@ -23,6 +23,8 @@ dependencies:
   flutter_svg:
   fan_carousel_image_slider:
   youtube_player_flutter: 9.0.0
+  chewie: ^1.8.5
+  video_player: ^2.9.2
 
 dev_dependencies:
   flutter_test:
