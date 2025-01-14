@@ -2,29 +2,27 @@ import 'package:netflix_app/core/entity/trailer.dart';
 import 'package:netflix_app/core/models/trailer.dart';
 
 class TrailerMapper {
-  static TrailerEntity toEntity(TrailerModel trailerModel) {
+  static TrailerEntity mapToEntity(TrailerModel model) {
     return TrailerEntity(
-      adult: trailerModel.adult,
-      backdropPath: trailerModel.backdropPath,
-      budget: trailerModel.budget,
-      homepage: trailerModel.homepage,
-      id: trailerModel.id,
-      imdbId: trailerModel.imdbId,
-      originCountry: trailerModel.originCountry,
-      originalLanguage: trailerModel.originalLanguage,
-      originalTitle: trailerModel.originalTitle,
-      overview: trailerModel.overview,
-      popularity: trailerModel.popularity,
-      posterPath: trailerModel.posterPath,
-      releaseDate: trailerModel.releaseDate,
-      revenue: trailerModel.revenue,
-      runtime: trailerModel.runtime,
-      status: trailerModel.status,
-      tagline: trailerModel.tagline,
-      title: trailerModel.title,
-      video: trailerModel.video,
-      voteAverage: trailerModel.voteAverage,
-      voteCount: trailerModel.voteCount,
+      id: model.id ?? 0,  // provide a default value in case id is null
+      results: model.results.map((result) => ResultMapper.mapToEntity(result)).toList(),
+    );
+  }
+}
+
+class ResultMapper {
+  static ResultEntity mapToEntity(Result result) {
+    return ResultEntity(
+      iso6391: result.iso6391 ?? "",
+      iso31661: result.iso31661 ?? "",
+      name: result.name ?? "",
+      key: result.key ?? "",
+      site: result.site ?? "",
+      size: result.size ?? 0,
+      type: result.type ?? "",
+      official: result.official ?? false,
+      publishedAt: result.publishedAt ?? DateTime(1970, 1, 1),
+      id: result.id ?? "",
     );
   }
 }

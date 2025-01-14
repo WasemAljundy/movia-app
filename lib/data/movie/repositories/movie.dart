@@ -46,15 +46,26 @@ class MovieRepositoryImpl extends MovieRepository {
     return returnedData.fold(
       (error) => Left(error),
       (data) {
-        var movie = TrailerMapper.toEntity(TrailerModel.fromJson(data));
+        var movie = TrailerMapper.mapToEntity(TrailerModel.fromJson(data));
         return Right(movie);
       },
     );
   }
 
   @override
-  Future<Either> getRecommendationMovies(int movieId) {
-    // TODO: implement getRecommendationMovies
-    throw UnimplementedError();
+  Future<Either> getRecommendationMovies(int movieId) async {
+    var returnedData =
+        await sl<MovieService>().getRecommendationMovies(movieId);
+    return returnedData.fold(
+      (error) => Left(error),
+      (data) {
+        var movies = List.from(data['results'])
+            .map(
+              (item) => MovieMapper.toEntity(MovieModel.fromJson(item)),
+            )
+            .toList();
+        return Right(movies);
+      },
+    );
   }
 }

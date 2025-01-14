@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/common/widgets/appbar/app_bar.dart';
 import 'package:netflix_app/domain/movie/entities/movie.dart';
+import 'package:netflix_app/presentation/watch/widgets/recommendation_movies.dart';
 import 'package:netflix_app/presentation/watch/widgets/video_overview.dart';
 import 'package:netflix_app/presentation/watch/widgets/video_player.dart';
 import 'package:netflix_app/presentation/watch/widgets/video_release_date.dart';
@@ -35,6 +36,8 @@ class MovieWatchPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             VideoOverview(overview: movieEntity.overview!),
+            const SizedBox(height: 20),
+            RecommendationMovies(movieId: movieEntity.id!),
           ],
         ),
       ),

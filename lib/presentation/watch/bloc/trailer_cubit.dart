@@ -18,15 +18,21 @@ class TrailerCubit extends Cubit<TrailerState> {
       },
       (data) async {
         TrailerEntity trailerEntity = data;
-        YoutubePlayerController controller = YoutubePlayerController(
-          initialVideoId: trailerEntity.id.toString(),
-          flags: const YoutubePlayerFlags(
-            autoPlay: false,
-          ),
-        );
-        emit(
-          TrailerLoaded(youtubePlayerController: controller),
-        );
+        if (trailerEntity.results.isNotEmpty) {
+          YoutubePlayerController controller = YoutubePlayerController(
+            initialVideoId: trailerEntity.results.first.key,
+            flags: const YoutubePlayerFlags(
+              autoPlay: false,
+            ),
+          );
+          emit(
+            TrailerLoaded(youtubePlayerController: controller),
+          );
+        } else {
+          emit(
+            LoadFailureTrailer(errorMessage: "No Trailer"),
+          );
+        }
       },
     );
   }

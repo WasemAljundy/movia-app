@@ -1,48 +1,35 @@
 class TrailerEntity {
+  final int id;
+  final List<ResultEntity> results;
+
   TrailerEntity({
-    required this.adult,
-    required this.backdropPath,
-    required this.budget,
-    required this.homepage,
     required this.id,
-    required this.imdbId,
-    required this.originCountry,
-    required this.originalLanguage,
-    required this.originalTitle,
-    required this.overview,
-    required this.popularity,
-    required this.posterPath,
-    required this.releaseDate,
-    required this.revenue,
-    required this.runtime,
-    required this.status,
-    required this.tagline,
-    required this.title,
-    required this.video,
-    required this.voteAverage,
-    required this.voteCount,
+    required this.results,
   });
+}
 
-  final bool? adult;
-  final String? backdropPath;
-  final int? budget;
-  final String? homepage;
-  final int? id;
-  final String? imdbId;
-  final List<String> originCountry;
-  final String? originalLanguage;
-  final String? originalTitle;
-  final String? overview;
-  final double? popularity;
-  final String? posterPath;
-  final DateTime? releaseDate;
-  final int? revenue;
-  final int? runtime;
-  final String? status;
-  final String? tagline;
-  final String? title;
-  final bool? video;
-  final double? voteAverage;
-  final int? voteCount;
+class ResultEntity {
+  final String iso6391;
+  final String iso31661;
+  final String name;
+  final String key;
+  final String site;
+  final int size;
+  final String type;
+  final bool official;
+  final DateTime publishedAt;
+  final String id;
 
+  ResultEntity({
+    required this.iso6391,
+    required this.iso31661,
+    required this.name,
+    required this.key,
+    required this.site,
+    required this.size,
+    required this.type,
+    required this.official,
+    required this.publishedAt,
+    required this.id,
+  });
 }

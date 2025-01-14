@@ -12,6 +12,7 @@ import 'package:netflix_app/domain/auth/usecases/is_logged_in.dart';
 import 'package:netflix_app/domain/auth/usecases/sign_in.dart';
 import 'package:netflix_app/domain/movie/repositories/movie.dart';
 import 'package:netflix_app/domain/movie/usecases/get_movie_trailer.dart';
+import 'package:netflix_app/domain/movie/usecases/get_recommendation_movies.dart';
 import 'package:netflix_app/domain/movie/usecases/get_trending_movies.dart';
 import 'package:netflix_app/domain/tv/repositories/tv.dart';
 import 'package:netflix_app/domain/tv/usecases/get_popular_tv.dart';
@@ -43,4 +44,5 @@ void setupServiceLocator() {
   sl.registerSingleton<GetNowPlayingMoviesUseCase>(GetNowPlayingMoviesUseCase());
   sl.registerSingleton<GetPopularTvUseCase>(GetPopularTvUseCase());
   sl.registerSingleton<GetMovieTrailerUseCase>(GetMovieTrailerUseCase());
+  sl.registerSingleton<GetRecommendationMoviesUseCase>(GetRecommendationMoviesUseCase());
 }
